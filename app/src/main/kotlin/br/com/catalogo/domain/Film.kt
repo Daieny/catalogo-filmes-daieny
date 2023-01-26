@@ -1,8 +1,6 @@
 package br.com.catalogo.domain
 
-import java.time.Duration
 import java.time.LocalDateTime
-import java.time.Year
 
 data class Film(
         val id: Int,

@@ -1,4 +1,8 @@
 package br.com.catalogo.services
 
-class ActorServices {
+import br.com.catalogo.domain.Actor
+
+class ActorServices(
+        val actor: Actor
+) {
 }

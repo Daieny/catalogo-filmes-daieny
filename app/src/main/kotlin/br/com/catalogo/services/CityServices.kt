@@ -1,4 +1,10 @@
 package br.com.catalogo.services
 
-class CityServices {
+import br.com.catalogo.domain.City
+
+class CityServices(
+        val city: City
+
+)
+{
 }

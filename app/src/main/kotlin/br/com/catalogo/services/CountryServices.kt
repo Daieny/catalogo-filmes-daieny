@@ -1,4 +1,9 @@
 package br.com.catalogo.services
 
-class CountryServices {
+import br.com.catalogo.domain.Country
+
+
+class CountryServices(
+        val country: Country
+) {
 }
