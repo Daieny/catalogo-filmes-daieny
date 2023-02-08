@@ -4,7 +4,6 @@ import br.com.catalogo.domain.Actor
 import br.com.catalogo.domain.City
 import br.com.catalogo.domain.Country
 import br.com.catalogo.domain.Language
-import br.com.catalogo.services.LanguageServices
 import io.micronaut.runtime.Micronaut.run
 import java.time.LocalDateTime
 
@@ -47,45 +46,65 @@ fun main(args: Array<String>) {
 /*	println(saoPaulo)
 	println(rioDeJaneiro)*/
 
-	val atorbrasil = Actor(
+	val rodrigoLombardi = Actor(
 			lastUpdate = LocalDateTime.now(),
 			id = 1,
 			firstName = "Rodrigo",
 			lastName = "Lombardi"
-
 	)
 
-	val portuguese = Language(
+	val dricaMoraes = Actor(
+			lastUpdate = LocalDateTime.now(),
+			id = 2,
+			firstName = "Drica",
+			lastName = "Moraes"
+	)
+
+	val brunaMarquezine = Actor(
+			lastUpdate = LocalDateTime.now(),
+			id = 3,
+			firstName = "Bruna",
+			lastName = "Marquezine"
+	)
+
+	val camilaQueiroz = Actor(
+			lastUpdate = LocalDateTime.now(),
+			id = 4,
+			firstName = "Camila",
+			lastName = "Queiroz"
+	)
+
+	val portugues = Language(
 			lastUpdate = LocalDateTime.now(),
 			id = 1,
 			name = "Português"
 	)
 
-	val english = Language(
+	val ingles = Language(
 			lastUpdate = LocalDateTime.now(),
 			id = 2,
 			name = "Inglês"
 	)
 
-	val french = Language(
+	val frances = Language(
 			lastUpdate =  LocalDateTime.now(),
 			id = 3,
 			name = "Francês"
 	)
 
-	val german = Language(
+	val alemao = Language(
 			lastUpdate = LocalDateTime.now(),
 			id = 4,
 			name = "Alemão"
 
 	)
-	val italian = Language(
+	val italiano = Language(
 			lastUpdate = LocalDateTime.now(),
 			id = 5,
 			name = "Italiano"
 	)
 
-	val spanish = Language(
+	val espanhol = Language(
 			lastUpdate = LocalDateTime.now(),
 			id = 6,
 			name = "Espanhol"
