@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.allopen") version "1.6.21"
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("io.micronaut.application") version "3.7.0"
+    id("org.jetbrains.kotlin.plugin.jpa") version "1.6.21"
 }
 
 version = "0.1"
@@ -15,8 +16,11 @@ repositories {
 }
 
 dependencies {
-    implementation("com.lugew.winsim:entity:1.0.2-RELEASE")
+    kapt("io.micronaut.data:micronaut-data-processor")
     kapt("io.micronaut:micronaut-http-validation")
+    implementation("com.lugew.winsim:entity:1.0.2-RELEASE")
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
@@ -25,6 +29,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
+    runtimeOnly("com.h2database:h2")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 

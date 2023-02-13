@@ -4,6 +4,7 @@ import br.com.catalogo.domain.Actor
 import br.com.catalogo.domain.City
 import br.com.catalogo.domain.Country
 import br.com.catalogo.domain.Language
+import br.com.catalogo.services.ActorServices
 import io.micronaut.runtime.Micronaut.run
 import java.time.LocalDateTime
 
@@ -45,6 +46,8 @@ fun main(args: Array<String>) {
 
 /*	println(saoPaulo)
 	println(rioDeJaneiro)*/
+	val actorServices : ActorServices
+
 
 	val rodrigoLombardi = Actor(
 			lastUpdate = LocalDateTime.now(),
@@ -67,12 +70,18 @@ fun main(args: Array<String>) {
 			lastName = "Marquezine"
 	)
 
-	val camilaQueiroz = Actor(
-			lastUpdate = LocalDateTime.now(),
-			id = 4,
-			firstName = "Camila",
-			lastName = "Queiroz"
+	val actors = mapOf(
+			"1" to "Rodrigo Lombardi",
+			"2" to "Drica Moraes",
+			"3" to "Bruna Marquezine",
+
 	)
+
+	/*try {
+		actorServices.validateActor(rodrigoLombardi)
+	} catch(e: Exception) {
+		println(e.stackTrace)
+	}*/
 
 	val portugues = Language(
 			lastUpdate = LocalDateTime.now(),
@@ -86,23 +95,6 @@ fun main(args: Array<String>) {
 			name = "Inglês"
 	)
 
-	val frances = Language(
-			lastUpdate =  LocalDateTime.now(),
-			id = 3,
-			name = "Francês"
-	)
-
-	val alemao = Language(
-			lastUpdate = LocalDateTime.now(),
-			id = 4,
-			name = "Alemão"
-
-	)
-	val italiano = Language(
-			lastUpdate = LocalDateTime.now(),
-			id = 5,
-			name = "Italiano"
-	)
 
 	val espanhol = Language(
 			lastUpdate = LocalDateTime.now(),
