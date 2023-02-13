@@ -1,44 +1,58 @@
 package controller
 
 import br.com.catalogo.domain.Actor
+import br.com.catalogo.repository.ActorRepository
 import br.com.catalogo.services.ActorServices
-import io.micronaut.http.annotation.Controller
-import io.micronaut.http.annotation.Delete
+import io.micronaut.http.annotation.*
+import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Post
-import io.micronaut.http.annotation.Put
+import io.micronaut.http.annotation.Controller
+import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller("/actor")
-class ActorController() {
-    val actorServices = ActorServices()
-
-
-    @Post fun create(actor : Actor) {
-        println(actor)
-    }
-
-    @Put fun update (actor: Actor) {
-        println(actor)
-
-    }
-
-    @Delete("/{id}")
-    fun update(id: Int){
-        println("DELETE: $id")
+class ActorController(
+    private val actorServices: ActorServices
+) {
+    @Post
+    fun create(@Body actor: Actor) {
+        actorServices.create(actor)
     }
 
     @Get
-    fun getall(): List<Actor>{
-
+    fun findAll(): List<Actor> {
+        return actorServices.findAll()
     }
 
     @Get("/{id}")
-    fun findById(id: Int) {
-        println("FIND_BY_ID: $id")
+    fun findById(@PathVariable id: Int): Actor {
+        return actorServices.findById(id)
     }
 
+    @Delete("/{id}")
+    fun delete(@PathVariable id: Int) {
+        actorServices.delete(id)
+
     }
-
-
 }
+
+
+   /* @Put fun update (actor: Actor): Actor {
+    //    return ActorRepository.save(actor)
+    //    println(actor)
+
+    }
+
+
+    }
+
+    }
+
+
+    }*/
+
+
+
+
+
 
