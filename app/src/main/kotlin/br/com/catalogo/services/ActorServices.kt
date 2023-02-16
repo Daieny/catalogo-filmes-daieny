@@ -1,75 +1,43 @@
 package br.com.catalogo.services
 
 import br.com.catalogo.domain.Actor
-import br.com.catalogo.repository.ActorRepository
-import io.micronaut.http.annotation.*
-import org.springframework.web.bind.annotation.PostMapping
-import java.net.http.HttpResponse
 import java.time.LocalDateTime
 
-class ActorServices(
-    private val actorRepository: ActorRepository
-        val id: Int,
-        val firstName: String,
-        val lastName: String,
+class ActorServices()
 
-) {
-    fun create(actor: Actor){
-        actorRepository.save(actor)
 
-        fun actors(): Map<Int, String> {
-            return mapOf()
+       // val id: Int,
+      //  val firstName: String,
+     //   val lastName: String,
+
+ {
+
+
+        val actorMap = mutableMapOf(
+                1 to Actor(1, "Rodrigo", "Lombardi", LocalDateTime.now()),
+                2 to Actor(2, "Drica", "Moraes", LocalDateTime.now()),
+                3 to Actor(3, "Bruna", "Marquezine", LocalDateTime.now()),
+
+                )
+
+        fun create(actor: Actor) {
+            actorMap.put(actor.id, actor)
         }
-            fun idActorExist(id: Int): Boolean {
-                if (actor.id <= 3) return throw Exception("ID Inválido")
+        fun findAll(): List<Actor>{
+            val actors: List<Actor> = actorMap.values.toList()
+            return actors
+        }
 
-}
-    fun findAll(): List<Actor> {
-        return actorRepository.findAll()
-    }
-
-    fun findById(id: Int): Actor {
-        return actorRepository.findById(id).get()
-    }
+  //  fun findById(id: Int) : Actor{
+  //      val actor = actorMap.get(id)
+  //      return actor
+  //  }
 
     fun delete(id: Int) {
-        actorRepository.deleteById(id)
-        println("DELETE: $id")
-
+        actorMap.remove(id)
     }
 }
 
 
-       /* fun findById(id: Long): Actor? = Actor.findById(id).get()
-        fun save(actor: Actor): Actor{
-        }
 
 
-        }
-        throw Exception("Id inválido")
-         return HttpResponse.
-
-
-    }
-        fun update (actor: Actor): Actor {
-       return Actor.save(actor)
-        println(actor) */
-/*
-
-    fun actorValidate(actor: Actor) {
-
-
-    }
-
-    fun getAll() = listOf("Rodrigo Lombardi", "Drika Moraes", "Bruna Marquezine", "Camila Queiroz", "Agatha Moreira")
-
-}
-    fun getById(actor: Actor){
-        id: Int -> actor_id: Long Actor? = repository.findById(id).get()
-    }
-
-    companion object {
-
-
-
-    }*/

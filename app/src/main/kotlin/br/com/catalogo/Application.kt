@@ -70,12 +70,7 @@ fun main(args: Array<String>) {
 			lastName = "Marquezine"
 	)
 
-	val actors = mapOf(
-			"1" to "Rodrigo Lombardi",
-			"2" to "Drica Moraes",
-			"3" to "Bruna Marquezine",
 
-	)
 
 	/*try {
 		actorServices.validateActor(rodrigoLombardi)

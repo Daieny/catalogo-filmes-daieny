@@ -24,10 +24,10 @@ class ActorController(
         return actorServices.findAll()
     }
 
-    @Get("/{id}")
+   /* @Get("/{id}")
     fun findById(@PathVariable id: Int): Actor {
         return actorServices.findById(id)
-    }
+    } */
 
     @Delete("/{id}")
     fun delete(@PathVariable id: Int) {
